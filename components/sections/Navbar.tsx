@@ -21,14 +21,14 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full  border-gray-200 bg-transparent bg-none">
+    <header className=" top-0 z-50 w-full bg-transparent backdrop-blur-sm">
       {/* Container for padding and max-width */}
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className=" px-4 sm:px-6 lg:px-20 py-3 mx-auto">
         <div className="flex h-16 items-center justify-between">
           
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Image src="/icons/vertexlogo.svg" alt="Vertex Logo" width={120} height={32} priority/>
+            <Image src="/icons/vertexlogo.svg" alt="Vertex Logo" width={150} height={32} priority/>
           </div>
 
           {/* Desktop Navigation Links */}
@@ -37,7 +37,7 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 href={item.href}
-                className="font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                className="font-medium text-[#000000] text-lg  transition-colors"
               >
                 {item.label}
               </Link>

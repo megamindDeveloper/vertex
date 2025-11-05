@@ -24,7 +24,7 @@ const FormField: React.FC<{
   children: React.ReactNode;
 }> = ({ id, label, className, children }) => (
   <div className={cn("space-y-2", className)}>
-    <label htmlFor={id} className="text-sm font-medium text-gray-700">
+    <label htmlFor={id} className="text-sm font-medium text-[#848484]">
       {label}
     </label>
     {children}
@@ -66,7 +66,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
       <FormRow>
         <FormField id="phone" label="">
           <div className="flex">
-            <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-100 px-3 text-sm text-gray-600">
+            <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-100 px-3 text-sm text-[#848484]">
               +91
             </span>
             <Input
@@ -102,7 +102,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
           className={cn(
             "flex w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm",
             "placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2",
-            "focus-visible:ring-blue-500"
+            "focus-visible:none"
           )}
         />
         <p className="text-xs text-right text-gray-400">0/125</p>
@@ -110,25 +110,28 @@ export const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
 
       {/* Consent + Button */}
       <div className="space-y-4 pt-2">
-        <div className="flex items-center">
+        <div className="flex w-full justify-between items-center">
+          <div className="flex ">
           <input
             id="consent"
             name="consent"
             type="checkbox"
-            className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            className="h-4 w-4 rounded border-gray-300 text-blue-600 "
             defaultChecked
           />
           <label htmlFor="consent" className="ml-3 block text-sm text-gray-700">
             Consent to contact me via Call, SMS, Email, or WhatsApp
           </label>
-        </div>
-
-        <Button
+          </div>
+          <Button
           type="submit"
           className="w-full md:w-auto bg-[#0097DC] hover:bg-[#007bb5] text-white font-semibold rounded-md"
         >
           Get a Quote
         </Button>
+        </div>
+
+        
       </div>
     </form>
   );

@@ -5,11 +5,11 @@ import { cn } from "../lib/utils";
 
 // Define button variants using class-variance-authority (cva)
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center cursor-pointer rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        primary: "bg-blue-600 text-white hover:bg-blue-700",
+        primary: "bg-[#0097DC] text-white !text-lg font-bold !rounded-sm hover:bg-[#0097DC]/80",
         secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200",
         ghost: "hover:bg-gray-100 hover:text-gray-900",
         link: "text-primary underline-offset-4 hover:underline",
@@ -17,7 +17,7 @@ const buttonVariants = cva(
           "border border-gray-300 text-gray-800 hover:bg-gray-100 bg-transparent",
       },
       size: {
-        default: "h-10 px-4 py-2",
+        default: "h-13 px-4 py-4",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
