@@ -3,8 +3,11 @@
 import Image from "next/image";
 import { Button } from "../ui/Button"; // adjust import path based on your project
 import officeImg from "../../public/images/testimonials/1.png"; // replace with your actual image path
+import { ContactForm } from "./ContactForm";
+import { useState } from "react";
 
 export default function PrivateOffices() {
+  const [open, setOpen] = useState(false);
   const offices = [
     {
       title: "Vertex One",
@@ -28,12 +31,12 @@ export default function PrivateOffices() {
 
   return (
     <section className="bg-[#f7f7f7] py-16 px-4 lg:px-12">
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto ">
         {/* Heading */}
-        <h2 className="text-3xl text-start font-semibold text-gray-900">
+        <h2 className="text-3xl sm:text-[40px] text-start font-semibold text-primary leading-snug">
           Our Private Offices
         </h2>
-        <p className="text-gray-600  text-start mt-2">
+        <p className="mt-2 text-secondary font-normal text-base sm:text-lg">
           Empower your business with an office space in the most sought after
           locations across the city.
         </p>
@@ -54,7 +57,7 @@ export default function PrivateOffices() {
           {offices.map((office, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
+              className="bg-white  overflow-hidden  transition"
             >
               <div className="relative w-full h-52">
                 <Image
@@ -69,14 +72,14 @@ export default function PrivateOffices() {
                 </div>
               </div>
               <div className="p-6 text-left">
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-3xl font-semibold text-primary">
                   {office.title}
                 </h3>
-                <p className="text-gray-600 mt-1 text-sm leading-relaxed">
+                <p className="text-secondary mt-1 text-lg leading-relaxed">
                   {office.address}
                 </p>
                 <div className="mt-4">
-                  <Button variant="primary" size="default">
+                  <Button onClick={() => setOpen(true)} variant="primary" size="default">
                     Get a Quote
                   </Button>
                 </div>
@@ -84,6 +87,12 @@ export default function PrivateOffices() {
             </div>
           ))}
         </div>
+        {open && (
+        <ContactForm
+          showModal
+          onClose={() => setOpen(false)}
+        />
+      )}
       </div>
     </section>
   );

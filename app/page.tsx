@@ -11,7 +11,6 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import Footer from "@/components/sections/Footer";
 import { AmenitiesModal } from "@/components/sections/AmenitiesModal";
 
-
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen bg-white dark:bg-black">
@@ -21,15 +20,14 @@ export default function Home() {
       {/* ✅ Hero Section */}
       <HeroSection />
 
-      <PrivateOfficeFeatures/>
+      <PrivateOfficeFeatures />
 
-      <WhyChooseVertex/>
-      {/* <TestimonialSection/> */}
-      <QuoteBanner/>
-      <PrivateOffices/>
-      <GetAQuoteSection FormComponent={<ContactForm />}/>
-      <Footer/>
-
+      <WhyChooseVertex />
+      <TestimonialSection />
+      <QuoteBanner />
+      <PrivateOffices />
+      <GetAQuoteSection FormComponent={<ContactForm />} />
+      <Footer />
     </main>
   );
 }

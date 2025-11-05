@@ -2,16 +2,20 @@
 
 import Image from "next/image";
 import { Button } from "../ui/Button";
+import { ContactForm } from "./ContactForm";
+import { useState } from "react";
 
 export default function QuoteBanner() {
+  const [open, setOpen] = useState(false);
   return (
     <section className="relative overflow-hidden bg-[#0096E6] text-white py-20 sm:py-24 lg:py-10">
       {/* Optional Background Pattern (you can replace this image later) */}
-      <div className="absolute inset-0 z-0 opacity-10">
+      <div className="absolute right-0 inset-0 z-0 opacity-10">
         <Image
           src="/images/quote-banner/bg.png" // Replace with your background lines image
           alt=""
-          fill
+          width={1000}
+          height={1000}
           className="object-cover"
         />
       </div>
@@ -28,11 +32,17 @@ export default function QuoteBanner() {
 
         {/* RIGHT BUTTON */}
         <div className="flex justify-center sm:justify-end w-full sm:w-auto">
-          <Button className="bg-white text-[#007BFF] font-semibold text-sm sm:text-base px-5 py-3 rounded-md shadow-sm hover:bg-blue-50 transition">
+          <Button onClick={() => setOpen(true)} className="bg-white text-[#0097DC] font-semibold text-sm sm:text-base px-5 py-3 rounded-md shadow-sm hover:bg-blue-50 transition">
             Get a Quote
           </Button>
         </div>
       </div>
+      {open && (
+        <ContactForm
+          showModal
+          onClose={() => setOpen(false)}
+        />
+      )}
     </section>
   );
 }

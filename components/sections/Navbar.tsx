@@ -7,6 +7,7 @@ import { Button } from '../ui/Button'; // Changed path for compatibility
 import { Menu, X } from 'lucide-react'; // For mobile menu icons
 import Link from 'next/link';
 import Image from 'next/image';
+import { ContactForm } from './ContactForm';
 
 // You'll need to install lucide-react: npm install lucide-react
 
@@ -19,6 +20,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <header className=" top-0 z-50 w-full bg-transparent backdrop-blur-sm">
@@ -42,7 +44,7 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
-             <Button variant="primary" size="default">
+             <Button onClick={() => setOpen(true)} variant="primary" size="default">
               Get a Quote
             </Button>
           </nav>
@@ -83,13 +85,14 @@ const Navbar = () => {
             ))}
             {/* Mobile "Get a Quote" Button */}
             <div className="pt-2">
-              <Button variant="primary" className="w-full">
+              <Button onClick={() => setOpen(true)} variant="primary" className="w-full">
                 Get a Quote
               </Button>
             </div>
           </nav>
         </div>
       )}
+      
     </header>
   );
 };

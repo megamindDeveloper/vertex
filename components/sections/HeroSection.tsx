@@ -11,10 +11,8 @@ import "swiper/css";
 
 export default function HeroSection() {
   return (
-   
-
-    <section className="relative px-4 sm:px-6 lg:px-20 mx-auto py-16 lg:py-24 items-center">
-         <svg
+    <section className="relative px-4 sm:px-6 lg:px-20 mx-auto py-12 sm:py-16 lg:py-24 items-center">
+      <svg
         className="absolute left-0 top-0 h-full w-auto text-blue-100 pointer-events-none opacity-40"
         width="996"
         height="1117"
@@ -27,18 +25,18 @@ export default function HeroSection() {
           stroke="#0097DC"
         />
       </svg>
-      <div className="grid grid-cols-12 ">
-        <div className="col-span-4">
+      <div className="grid grid-cols-1 lg:grid-cols-12 ">
+        <div className="col-span-1 lg:col-span-4">
           <div className="">
             {/* LEFT CONTENT */}
-            <div className="absolute mt-0 ">
-              <div className="bg-white w-[70%] h-[680px] text-primary   p-8 sm:p-10 relative z-10">
+            <div className="mt-0 lg:absolute">
+              <div className=" bg-white w-full lg:w-[70%] h-auto lg:h-[700px] text-primary   p-6 sm:p-8 lg:p-10 relative z-10">
                 <div className="mt-2">
-                  <h1 className="text-3xl sm:text-[56px] font-semibold leading-tight text-primary">
+                  <h1 className="text-3xl sm:text-[40px] lg:text-[56px] font-semibold leading-tight text-primary">
                     Private Offices <br />
                     That Mean Business
                   </h1>
-                  <p className="mt-3 text-base sm:text-[24px] text-primary">
+                  <p className="mt-3 text-base sm:text-lg lg:text-[24px] text-primary">
                     Vertex Private Offices give you privacy, productivity, and prestige all under one roof.
                   </p>
                 </div>
@@ -51,11 +49,11 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="col-span-8 absolute"></div>
+        <div className="hidden lg:block lg:col-span-8 lg:absolute"></div>
       </div>
-      <div className="grid grid-cols-12 ">
-        <div className="col-span-4"></div>
-        <div className="col-span-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 ">
+        <div className="hidden lg:block lg:col-span-4"></div>
+        <div className="col-span-1 lg:col-span-8">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={0}
@@ -69,7 +67,7 @@ export default function HeroSection() {
             {[heroImageUrl, heroImageUrl, heroImageUrl].map((src, idx) => (
               <SwiperSlide key={idx}>
                 {/* Wrapper with fixed height */}
-                <div className="relative w-full h-[700px]">
+                <div className="relative w-full h-[260px] sm:h-[360px] md:h-[480px] lg:h-[730px]">
                   <Image src={src} alt={`Office slide ${idx + 1}`} fill sizes="100vw" className="object-cover" priority />
                 </div>
               </SwiperSlide>

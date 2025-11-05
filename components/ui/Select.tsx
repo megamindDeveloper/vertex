@@ -18,8 +18,8 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         <select
           className={cn(
             'flex h-1D w-full appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 text-sm',
-            'ring-offset-background placeholder:text-gray-500 focus:outline-none focus:ring-2',
-            'focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+            ' placeholder:text-gray-500 ',
+            ' disabled:opacity-50',
             'pr-8', // Add padding for the icon
             className
           )}
