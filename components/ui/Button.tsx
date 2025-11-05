@@ -9,10 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-blue-600 text-white hover:bg-blue-700", // Our main "Get a Quote" style
+        primary: "bg-blue-600 text-white hover:bg-blue-700",
         secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200",
-        ghost: "hover:bg-gray-100 hover:text-gray-900", // For nav links, if needed
+        ghost: "hover:bg-gray-100 hover:text-gray-900",
         link: "text-primary underline-offset-4 hover:underline",
+        outline:
+          "border border-gray-300 text-gray-800 hover:bg-gray-100 bg-transparent",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -27,6 +29,7 @@ const buttonVariants = cva(
     },
   }
 );
+
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
